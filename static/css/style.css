@@ -1,0 +1,130 @@
+/*
+Project Name: Picabay
+Project URI: https://github.com/Sphenyx-webb/picabay.git
+Author: Sphenyx Web team
+Author URI: https://github.com/Sphenyx-webb/
+Description: Picabay is a clean, modern, fully responsive flat design e-commerce website
+Version: 1.0.0
+License: GNU General Public License v1 or later
+License URI: http://www.gnu.org/licenses/gpl-2.0.html
+Languages: English
+Tags: e-commerce, online store...
+
+Features
+---------
+
+1. Responsive (mobile friendly pages)
+
+----------------------------------------------- */
+
+:root {
+    --main-color: #00B612;
+    --main-color-300: #098D16;
+    --main-color-500: #002709;
+    --brand-dark: #2D2D2D;
+    --alt-color: #FFF5E5;
+}
+
+@font-face {
+	font-family: 'MontserratRegular';
+	src: url('../fonts/montserrat/MontserratRegular.eot');
+	src: local('MontserratRegular'), url('../fonts/montserrat/MontserratRegular.woff') format('woff'), url('../fonts/montserrat/MontserratRegular.ttf') format('truetype');
+    font-stretch: normal;
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'MontserratBlack';
+    src: url('../fonts/montserrat/MontserratBlack.eot');
+    src: local('MontserratBlack'), url('../fonts/montserrat/MontserratBlack.woff') format('woff'), url('../fonts/montserrat/MontserratBlack.ttf') format('truetype');
+    font-stretch: normal;
+    font-weight: normal;
+    font-style: normal;
+}
+
+/* Resets / Normalize */
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+aside, div, figure, footer, header, main, section {
+    display: block;
+}
+
+ol,ul{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+    color: var(--main-color);
+}
+
+a:hover{
+    text-decoration: none;
+    color: var(--main-color-300);
+}
+
+.btn{
+    outline: 0;
+    transition: ease-in-out .5s;
+    user-select: none
+}
+
+.btn:focus, .btn:hover{
+    outline: 0 !important;
+}
+
+p{
+    line-height: 1.5;
+    font-family: 'MontserratRegular', sans-serif;
+    font-weight: 400;
+    font-size: 15px;
+    margin-bottom: 0;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'MontserratBlack', sans-serif;
+    display: block;
+}
+
+/* Custom classes */
+
+/* BACKGROUND CLASSES */
+.bg-main {
+    background: var(--main-color);
+}
+.bg-main-300 {
+    background: var(--main-color-300);
+}
+.bg-main-500 {
+    background: var(--main-color-500);
+}
+.bg-brand-dark {
+    background: var(--brand-dark);
+}
+.bg-alt{
+    background: var(--alt-color);
+}
+
+/* TEXT CLASSES */
+.text-main{
+    color: var(--main-color);
+}
+.text-main-300{
+    color: var(--main-color-300);
+}
+.text-main-500{
+    color: var(--main-color-500);
+}
+.text-alt{
+    color: var(--alt-color);
+}
+.text-brand-dark{
+    color: var(--brand-dark);
+}
+
+/* BUTTON CLASSES */
