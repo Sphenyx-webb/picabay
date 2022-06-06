@@ -19,10 +19,15 @@ Features
 
 :root {
     --main-color: #00B612;
+    --main-color-100: #58DF66;
     --main-color-300: #098D16;
+    --main-color-400: #035916;
     --main-color-500: #002709;
     --brand-dark: #2D2D2D;
+    --brand-dark-100: #3F3D3D;
     --alt-color: #FFF5E5;
+    --brand-gray: #F2F3F5;
+    --brand-gray-300: #999A9C;
 }
 
 @font-face {
@@ -80,25 +85,29 @@ a:hover{
 
 p{
     line-height: 1.5;
-    font-family: 'MontserratRegular', sans-serif;
-    font-weight: 400;
+    font-family: 'MontserratRegular';
+    font-weight: 300;
     font-size: 15px;
     margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'MontserratBlack', sans-serif;
+    font-family: 'MontserratBlack';
     display: block;
 }
-
-/* Custom classes */
 
 /* BACKGROUND CLASSES */
 .bg-main {
     background: var(--main-color);
 }
+.bg-main-100{
+    background: var(--main-color-100);
+}
 .bg-main-300 {
     background: var(--main-color-300);
+}
+.bg-main-400 {
+    background: var(--main-color-400);
 }
 .bg-main-500 {
     background: var(--main-color-500);
@@ -106,16 +115,39 @@ h1, h2, h3, h4, h5, h6{
 .bg-brand-dark {
     background: var(--brand-dark);
 }
+.bg-brand-dark-100{
+    background: var(--brand-dark-100);
+}
 .bg-alt{
     background: var(--alt-color);
+}
+.bg-brand-gray {
+    background: var(--brand-gray);
+}
+.bg-brand-gray-300{
+    background: var(--brand-gray-300);
+}
+.bg-brand-gradient {
+    background: rgb(0,182,18);
+    background: -moz-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    background: -webkit-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    background: radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b612",endColorstr="#098d16",GradientType=1);
+    -webkit-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b612",endColorstr="#098d16",GradientType=1);
 }
 
 /* TEXT CLASSES */
 .text-main{
     color: var(--main-color);
 }
+.text-main-100{
+    color: var(--main-color-100);
+}
 .text-main-300{
     color: var(--main-color-300);
+}
+.text-main-400{
+    color: var(--main-color-400);
 }
 .text-main-500{
     color: var(--main-color-500);
@@ -126,5 +158,46 @@ h1, h2, h3, h4, h5, h6{
 .text-brand-dark{
     color: var(--brand-dark);
 }
+.text-brand-dark-100{
+    color: var(--brand-dark-100);
+}
+.text-gray{
+    color: var(--brand-gray);
+}
+.text-gray-300{
+    color: var(--brand-gray-300);
+}
 
 /* BUTTON CLASSES */
+.btn-main{
+    color: var(--brand-gray);
+    background: var(--main-color);
+}
+.btn-main:hover, .btn-main:focus{
+    background: var(--main-color-100);
+    color: var(--main-color-400);
+}
+.btn-main-300{
+    color: var(--brand-gray);
+    background: var(--main-color-300);
+}
+.btn-main-300:hover, .btn-main-300:focus{
+    background: var(--main-color);
+    color: var(--brand-gray);
+}
+.btn-main-400{
+    color: var(--brand-gray);
+    background: var(--main-color-400);
+}
+.btn-main-400:hover, .btn-main-400:focus{
+    background: var(--main-color-300);
+    color: var(--brand-gray);
+}
+.btn-alt{
+    color: var(--main-color-400);
+    background: var(--alt-color);
+}
+.btn-alt:hover, .btn-alt:focus{
+    background: var(--brand-gray);
+    color: var(--main-color-400);
+}
