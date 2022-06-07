@@ -425,7 +425,7 @@ footer .searchBtn p{
   .copyright{
       background: var(--brand-gray);
       position: relative;
-      height: 1px;
+      height: 0.015rem;
   }
 
   .copyright-text{
