@@ -28,6 +28,8 @@ Features
     --brand-gray: #F2F3F5;
     --brand-gray-300: #999A9C;
     --alt-color: #FFF5E5;
+    --brand-gray: #F2F3F5;
+    --brand-gray-300: #999A9C;
 }
 
 @font-face {
@@ -93,18 +95,16 @@ a:hover{
 
 p{
     line-height: 1.5;
-    font-family: 'MontserratRegular', sans-serif;
-    font-weight: 400;
+    font-family: 'MontserratRegular';
+    font-weight: 300;
     font-size: 15px;
     margin-bottom: 0;
 }
 
 h1, h2, h3, h4, h5, h6{
-    font-family: 'MontserratBlack', sans-serif;
+    font-family: 'MontserratBlack';
     display: block;
 }
-
-/* Custom classes */
 
 /* BACKGROUND CLASSES */
 .bg-main {
@@ -136,6 +136,20 @@ h1, h2, h3, h4, h5, h6{
 }
 .bg-alt{
     background: var(--alt-color);
+}
+.bg-brand-gray {
+    background: var(--brand-gray);
+}
+.bg-brand-gray-300{
+    background: var(--brand-gray-300);
+}
+.bg-brand-gradient {
+    background: rgb(0,182,18);
+    background: -moz-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    background: -webkit-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    background: radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b612",endColorstr="#098d16",GradientType=1);
+    -webkit-filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#00b612",endColorstr="#098d16",GradientType=1);
 }
 
 /* TEXT CLASSES */
@@ -210,17 +224,17 @@ h1, h2, h3, h4, h5, h6{
     padding-bottom: 0.2rem;
 }
 
+.sidebar-toggler{
+    color: var(--brand-gray);
+    font-size: 18px;
+    font-weight: 400;
+    margin-right: 40px;
+}
+
 .navbar-brand{
     padding: 0;
     margin-top: -5px;
     margin-right: 30px;
-}
-
-.sidebar-toggler{
-    color: var(--alt-color);
-    font-size: 18px;
-    font-weight: 400;
-    margin-right: 40px;
 }
 
 .search-box{
@@ -262,11 +276,6 @@ h1, h2, h3, h4, h5, h6{
     color: var(--brand-gray);
 }
 
-.fa-circle-question{
-    color: var(--main-color-300);
-    font-size: 18px;
-}
-
 .help-icon{
     width: 20px;
     height: 20px;
@@ -279,11 +288,18 @@ h1, h2, h3, h4, h5, h6{
     margin-right: 5px;
 }
 
+.fa-circle-question{
+    color: var(--main-color-300);
+    font-size: 18px;
+}
+
 .profile-img{
     height: 26px;
     width: 26px;
     border-radius: 50%;
     object-fit: cover;
+    border: none !important;
+    outline: none !important;
 }
 
 .dropdown-icon{
@@ -325,19 +341,54 @@ h1, h2, h3, h4, h5, h6{
     font-weight: 500;
 }
 
-/* FOOTER */
-/* footer a{
-    width: max-content;
-} */
-
-footer a p:hover, footer a p:focus{
-    color: var(--brand-gray-300);
+/* MAIN */
+.carousel-item{
+    background: var(--brand-gray-300);
+    height: max-content;
+    border-radius: 10px;
+    overflow: hidden;
 }
 
+.carousel-indicators [data-bs-target] {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    padding: 0;
+    background-color: var(--brand-gray);
+    border: 0;
+    border-top: none;
+    border-bottom: none;
+    opacity: 1;
+  }
+
+  .carousel-indicators .active {
+      background: var(--main-color-400);
+  }
+
+  aside{
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+  }
+
+  .aside-div{
+      background: var(--brand-gray-300);
+      height: 150px;
+      width: 100%;
+      border-radius: 10px;
+  }
+
+
+/* FOOTER */
 footer a p{
     line-height: 25px;
     width: max-content;
     color: var(--brand-gray);
+}
+
+footer a p:hover, footer a p:focus{
+    color: var(--brand-gray-300);
 }
 
 footer .search-box{
@@ -370,48 +421,6 @@ footer .searchBtn p{
 .social a{
     color: var(--brand-dark);
 }
-
-/* MAIN */
-
-main{
-    height: 400px;
-} 
-
-.carousel-item{
-    background: var(--brand-gray-300);
-    height: 400px;
-    border-radius: 10px;
-}
-
-.carousel-indicators [data-bs-target] {
-    width: 8px;
-    height: 8px;
-    border-radius: 50%;
-    padding: 0;
-    background-color: var(--brand-gray);
-    border: 0;
-    border-top: none;
-    border-bottom: none;
-    opacity: 1;
-  }
-
-  .carousel-indicators .active {
-      background: var(--main-color-400);
-  }
-
-  aside{
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: space-between;
-  }
-
-  .aside-div{
-      background: var(--brand-gray-300);
-      height: 195px;
-      width: 100%;
-      border-radius: 10px;
-  }
 
   .copyright{
       background: var(--brand-gray);

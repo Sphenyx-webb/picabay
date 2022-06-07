@@ -5,15 +5,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PicaBay</title>
+    <!-- Bootstrap CSS-->
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
     <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
     <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
     <link rel="stylesheet" href="static/css/style.css" type="text/css">
-    <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
-    <link rel="manifest" href="/site.webmanifest">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
 </head>
 <body>
     <!-- MAIN HEADER -->
@@ -50,7 +55,7 @@
         
                         <div class="profile-section d-flex align-items-center me-5">
                             <span class="profile-img me-1">
-                                <img src="./media/images/gallery/profile-img.webp" alt="profile-img" class="profile-img">
+                                <img src="./static/images/icons/avatar.png" alt="profile-img" class="profile-img">
                             </span>
                             <span class="dropdown-icon"><i class="fas fa-angle-down"></i></span>
                         </div>
@@ -68,32 +73,10 @@
                         </div>
                     </div>
                 </div>
-               
-
-                <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Link</a>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
-                            </a>
-                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#">Action</a></li>
-                            <li><a class="dropdown-item" href="#">Another action</a></li>
-                            <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#">Something else here</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                </div> -->
             </div>
           </nav>
     </header>
+    
     <!-- SECTION -->
     <section class="py-5" id="showcase">
         <div class="container-fluid">
@@ -108,20 +91,20 @@
                           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="4" aria-label="Slide 5"></button>
                         </div>
                         <div class="carousel-inner">
-                          <div class="carousel-item active">
-                            <img src="" class="d-block w-100" alt="...">
+                          <div class="carousel-item active" data-bs-interval="3000" >
+                            <img src="./media/images/gallery/PicaBay_ad_01.jpg" class="img-fluid d-block" alt="...">
                           </div>
-                          <div class="carousel-item">
-                            <img src="" class="d-block w-100" alt="...">
+                          <div class="carousel-item" data-bs-interval="3000" >
+                            <img src="./media/images/gallery/PicaBay_ad_02.jpg" class="img-fluid d-block"  alt="...">
                           </div>
-                          <div class="carousel-item">
-                            <img src="" class="d-block w-100" alt="...">
+                          <div class="carousel-item" data-bs-interval="3000" >
+                            <img src="./media/images/gallery/PicaBay_ad_03.jpg" class="img-fluid d-block" alt="...">
                           </div>
-                          <div class="carousel-item">
-                            <img src="" class="d-block w-100" alt="...">
+                          <div class="carousel-item" data-bs-interval="3000" >
+                            <img src="./media/images/gallery/PicaBay_ad_04.jpg" class="img-fluid d-block" alt="...">
                           </div>
-                          <div class="carousel-item">
-                            <img src="" class="d-block w-100" alt="...">
+                          <div class="carousel-item" data-bs-interval="3000" >
+                            <img src="./media/images/gallery/PicaBay_ad_05.jpg" class="img-fluid d-block" alt="...">
                           </div>
                         </div>
                       </div>
@@ -133,8 +116,9 @@
             </div>
         </div>
     </section>
+
     <!-- MAIN FOOTER -->
-    <footer id="mainFooter" class="text-light bg-brand-dark pt-5">
+    <footer id="mainFooter" class="text-light bg-brand-dark pt-5 pb-4">
         <div class="container">
             <div class="row">
                 <div class="col">
