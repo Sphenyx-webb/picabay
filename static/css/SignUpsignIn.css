@@ -1,0 +1,203 @@
+.signInContainer, .signUpContainer{
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    position: relative;
+}
+
+.hero-section .illustration-img{
+    width: 40%;
+}
+
+#signInInit, #signUpInit{
+  width: 50px;
+  height: 50px;
+  font-size: 24px;
+}
+
+#signInInit:hover, #signUpInit:hover{
+  color: var(--main-color-400);
+}
+
+.form-inner-container{
+  width: 55%;
+}
+
+.form-inner-container p, .form-inner-container a{
+   font-size: 12px;
+}
+
+.form-label{
+  font-size: 14px;
+  font-family: 'MontserratRegular', sans-serif;
+}
+
+.form-control{
+  color: var(--brand-dark);
+  border: none;
+  outline: none;
+  box-shadow: none;
+  height: 35px;
+}
+
+.form-control:focus, .form-control:active{
+  border: none;
+  outline: none;
+  background: var(--brand-gray-200);
+  box-shadow: 0px 0px 3px 0px var(--main-color);
+  color: var(--brand-dark);
+}
+
+.form-check{
+  font-size: 12px;
+  margin-bottom: -9px;
+}
+
+.form-check-input{
+  border: 1px solid rgba(0,182,18,.25);
+}
+
+.form-check-input:focus{
+  border-color:var(--main-color-100);
+  outline:0;
+  box-shadow:0 0 0 .25rem rgba(0,182,18,.25);
+}
+
+.form-check-input:checked {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  box-shadow: none;
+}
+
+.passwordInputBox{
+  display: flex;
+  height: 35px;
+  position: relative;
+}
+
+input[type="password"]{
+  width: 100%;
+}
+
+.passwordToggler{
+  height: 100%;
+  background: transparent;
+  color: #808285;
+  position: absolute;
+  right: 0;
+}
+
+.passwordToggler:focus{
+  box-shadow: none;
+}
+
+.hero-section .largeText{
+  font-size: 28px;
+}
+
+.signUpContainer .hero-section{
+  height: 100vh;
+  width: 50%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+}
+
+.signUpContainer .form-container{
+  width: 50%;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.signUpContainer .hero-section p{
+  line-height: 30px;
+}
+
+.success{
+  border: 1px solid var(--main-color-300);
+}
+
+.error{
+  border: 1px solid red;
+}
+
+#errorText{
+  display: none;
+}
+
+.backHome{
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 20;
+  padding: 10px 0;
+  padding-left: 20px;
+  width: 50%;
+}
+
+.backHome img{
+  width: 95px;
+  margin-top: -5px;
+}
+
+.fa-arrow-left{
+  font-size: 15px;
+}
+
+@media screen and (max-width: 992px) {
+    .signInContainer, .signUpContainer{
+        grid-template-columns: auto;
+        width: 100vw;
+        height: auto;
+    }
+
+    .hero-section{
+        height: 100vh;
+    }
+
+    .hero-section .illustration-img{
+        width: 60%;
+    }
+
+    #signInInit, #signUpInit{
+        transform: rotate(90deg);
+        margin-top: 15px;
+    }
+
+    .form-container{
+        width: 100%;
+        padding: 40px 0;
+        padding-bottom: 50px;
+    }
+
+    .signUpContainer .form-container{
+        position: static;
+        width: 100%;
+        padding: 40px 0;
+        padding-bottom: 50px;
+    }
+
+    .form-inner-container{
+        width: 80%;
+    }
+
+    .signUpContainer .hero-section{
+        position: static;
+        width: 100%;
+    }
+
+    .backHome{
+      background: var(--main-color-300);
+      width: 100%;
+    }
+}
+
+@media screen and (max-height: 320px) {
+    .hero-section .illustration-img{
+        display: none;
+    }
+}

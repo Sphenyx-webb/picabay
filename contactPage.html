@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
+    <style>
+    .form-label{
+      font-size: 14px;
+      font-family: 'MontserratRegular', sans-serif;
+    }
+    
+    .form-control{
+      color: var(--brand-dark);
+      border: none;
+      outline: none;
+      box-shadow: none;
+      height: 35px;
+      width: 260px;
+    }
+    
+    .form-control:focus,
+    .form-control:active,
+     textarea:focus,
+     textarea:active{
+      border: none;
+      outline: none;
+      background: var(--brand-gray-200);
+      box-shadow: 0px 0px 3px 0px var(--main-color);
+      color: var(--brand-dark);
+    }
+  
+    .conMain, .addInfo{
+      display: grid;
+      grid-template-columns: 50% 50%;
+    }
+  
+    .illustration-img{
+      width: 90%;
+    }
+  
+    textarea{
+      height: 150px;
+      color: var(--brand-dark);
+      border: none;
+      outline: none;
+      box-shadow: none;
+      width: 260px;
+    }
+  
+    .submitBtn{
+      width: 260px;
+    }
+  
+    .conNav{
+      font-size: 12px;
+      font-weight: 600;
+    }
+  
+    .fa-angle-right{
+      font-size: 12px;
+    }
+  
+    .conSocial{
+      height: 25px;
+      width: 25px;
+      border-radius: 50%;
+      background: var(--brand-gray);
+      margin-right: 8px;
+      font-size: 15px;
+      line-height: 25px;
+      display: inline-block;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <!-- MAIN HEADER -->
+    <header id="mainHeader" class="header"></header>
+
+  <!-- LOGIN -->
+    <section id="contactPageContainer">
+        <div class="container-fluid pt-3 pb-5 contactPage">
+           <div class="conNav">
+             <a href="">Home</a>
+             <span><i class="fas fa-angle-right px-2"></i></span>
+             <a href="">Help</a>
+             <span><i class="fas fa-angle-right px-2"></i></span>
+             <a href="">Contact</a>
+           </div>
+           <div>
+             <h4 class="mt-4 mb-3">Contact Us</h4>
+             <div class="bg-brand-gradient container-fluid py-4 conFormContainer">
+                <div class="conMain">
+                    <div>
+                        <form id="form" class="contactFrom bg-white py-4 px-3 rounded-3">
+                            <div class="mb-3 d-flex justify-content-between">
+                                <label for="name" class="form-label">Name:</label>
+                                <input
+                                type="text"
+                                id="name"
+                                name="name"
+                                class="form-control bg-brand-gray-200 rounded-4"
+                                placeholder=""
+                              />
+                              </div>
+
+                           <div class="mb-3 d-flex justify-content-between">
+                            <label for="username" class="form-label">Email Address:</label>
+                            <input
+                            type="email"
+                            id="username"
+                            class="form-control bg-brand-gray-200 rounded-4"
+                            placeholder=""
+                            required
+                          />
+                          </div>
+        
+                          <div class="d-flex justify-content-between mb-4">
+                            <label for="message" class="form-label">How can we help you?</label>
+                            <textarea class="bg-brand-gray-200 rounded-4" type="text" name="message" id="message" required></textarea>
+                          </div>
+
+                          <div class="d-flex justify-content-end">
+                            <button type="submit" class="btn btn-main submitBtn" id="submitBtn">Submit</button>
+                          </div>
+                        </form>
+                      </div>
+                    <div class="d-flex justify-content-end align-items-center">
+                      <img
+                      src="./static/images/icons/Contact Us.svg"
+                      alt="sign up"
+                      class="img-fluid illustration-img"
+                    />
+                    </div>
+                </div>
+
+                <div class="addInfo text-brand-gray mt-4">
+                  <div>
+                    <div class="d-flex justify-content-between">
+                      <div class="d-flex">
+                        <span class="me-3 text-main-400">
+                          <i class="fas fa-envelope"></i>
+                        </span>
+                        <span>
+                          <p class="text-alt">Email</p>
+                          <p>shop@picabay.com</p>
+                        </span>
+                      </div>
+                      <div class="d-flex">
+                        <span class="me-3 text-main-400"><i class="fas fa-phone"></i></span>
+                        <span>
+                          <p class="text-alt">Phone support</p>
+                          <p>0705307490</p>
+                          <p>09078577316</p>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="d-flex">
+                      <span class="me-3 text-main-400">
+                        <i class="fas fa-clock"></i>
+                      </span>
+                      <span>
+                        <p class="text-alt">Business hours</p>
+                      <small>
+                        <p>8am - 7pm (Monday - Friday)</p>
+                      </small>
+                      <small>
+                        <p>8am - 6pm Weekend</p>
+                      </small>
+                      </span>
+                    </div>
+                    <div class="d-flex mt-3">
+                      <span class="me-3 text-main-400"><i class="fas fa-comment"></i></span>
+                      <span>
+                        <p class="text-alt mb-2">Socials</p>
+                        <div>
+                          <span class="conSocial">
+                            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+                        </span>
+                        <span class="conSocial">
+                            <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        </span>
+                        <span class="conSocial">
+                            <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        </span>
+                        <span class="conSocial">
+                            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+                        </span>
+                      </div>
+                  </div>
+                  </div>
+                  <div></div>
+                </div>
+             </div>
+           </div>
+        </div>
+      </section>
+
+     <!-- MAIN FOOTER -->
+     <footer class="footer text-light bg-brand-dark pt-5 pb-4 mt-0"></footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

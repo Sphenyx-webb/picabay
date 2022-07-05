@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignUp</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="static/css/SignUpsignIn.css" type="text/css">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
+</head>
+<body>
+   <!-- SIGN UP -->
+      <section id="signUpContainer">
+        <div class="container-fluid-lg signUpContainer">
+            <div
+              class="bg-brand-gradient d-flex flex-column align-items-center justify-content-center hero-section"
+            >
+             <div class="backHome">
+                <a class="navbar-brand" href="/index.html">
+                  <span class="text-white">
+                    <i class="fas fa-arrow-left"></i>
+                  </span>
+                  <span>
+                    <img src="static/images/logo/logo.png" alt="Picabay's logo">
+                  </span>
+              </a>
+            </div>
+              <img
+                src="./static/images/icons/sign up-sign in.svg"
+                alt="sign up"
+                class="img-fluid illustration-img"
+              />
+              <p class="mt-4 px-3 px-lg-5 text-white text-center font-regular largeText">Hi there, Let's set up your account right away</p>
+              <p class="mb-3 mt-2 text-brand-gray-200"> Shop with the best deals on PicaBay</p>
+              <button type="button" class="rounded-circle btn bg-light text-center text-main-300" id="signUpInit"><span class="fa fa-chevron-right"></span></button>
+            </div>
+            
+            <div
+              class="bg-alt d-flex flex-column align-items-center justify-content-center py-5 form-container"
+            >
+              <div
+                id="loginFormContainer"
+                class="shadow bg-white p-4 px-3 rounded-3 form-inner-container"
+              >
+                <h4 class="mt-1 mb-4">Sign Up</h4>
+
+                <form action="#" method="POST" class="font-regular" name="signUpForm" id="signUpForm">
+                  <div class="mb-3">
+                    <label for="firstname" class="form-label">Firstname</label>
+                    <input
+                    type="text"
+                    id="firstname"
+                    name="firstname"
+                    class="form-control bg-brand-gray-200 rounded-4"
+                    placeholder=""
+                    onblur="validateFirstName()"
+                  />
+                    <p class="pt-1 text-danger" id="errorText">Error Message</p>
+                  </div>
+
+                  <div class="mb-3 parent">
+                    <label for="lastname" class="form-label">Lastname</label>
+                    <input
+                    type="text"
+                    id="lastname"
+                    name="lastname"
+                    class="form-control bg-brand-gray-200 rounded-4"
+                    placeholder=""
+                    onblur="validateLastName()"
+                  />
+                    <p class="pt-1 text-danger" id="errorText">Error Message</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="email" class="form-label">Email</label>
+                    <input
+                    id="email"
+                    name="email"
+                    class="form-control bg-brand-gray-200 rounded-4"
+                    placeholder=""
+                    onblur="validateEmail()"
+                  />
+                  <p class="pt-1 text-danger" id="errorText">Error Message</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="passwordInputBox">
+                      <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      class="form-control bg-brand-gray-200 rounded-4"
+                      placeholder=""
+                      onblur="validatePassword()"
+                    />
+                    <button type="button" class="btn rounded-end-4 passwordToggler">
+                      <span class="fa-solid fa-eye-slash"></span>
+                    </button>
+                    </div>
+                    <p class="pt-1 text-danger" id="errorText">Error Message</p>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Comfirm Password</label>
+                    <div class="passwordInputBox">
+                      <input
+                      type="password"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      class="form-control bg-brand-gray-200 rounded-4"
+                      placeholder=""
+                      onblur="validateConPassword()"
+                    />
+                    <button type="button" class="btn rounded-end-4 passwordToggler">
+                      <span class="fa-solid fa-eye-slash"></span>
+                    </button>
+                    </div>
+                    <p class="pt-1 text-danger" id="errorText">Error Message</p>
+                  </div>
+
+                    <div>
+                      <p class="text-center mb-3">By creating an account you agree to our <a href="#">Terms & Conditions</a></p>
+                    </div>
+
+                  <div class="mb-3">
+                    <button type="submit" class="btn btn-main-300 w-100" id="submitBtn">Create Account</button>
+                  </div>
+                </form>
+                <p class="text-center mt-1">Already have an account? <a href="./Login.html" id="loginLink">Login</a></p>
+              </div>
+            </div>
+        </div>
+      </section>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="static/js/script.js"></script>
+    <script src="static/js/forms.js"></script>
+    <script>
+
+     // ARROW BUTTON
+      const sgBtn = document.querySelector("#signUpInit");
+      const sgForm = document.querySelector("#signUpForm");
+      sgBtn.addEventListener("click", () => {
+        sgForm.firstElementChild.children[0].focus();
+      });
+      
+      
+      // FORM VALIDATION
+      const signUpForm = document.forms.signUpForm;
+      const firstName = signUpForm.elements.firstname;
+      const lastName = signUpForm.elements.lastname;
+      const email = signUpForm.elements.email;
+      const password = signUpForm.elements.password;
+      const confirmPassword = signUpForm.elements.confirmPassword;
+      
+      
+      // CLIENT-SIDE VALIDATION ONBLUR
+      function validateFirstName(){
+          if(firstName.value.trim()===""){
+              onError(firstName, "Firstname cannot be empty");
+           } else if(firstName.value.trim().length <= 2){
+              onError(firstName, "Firstname must be more than 2 characters");
+           } else{
+               onSuccess(firstName);
+           }
+      }
+      
+      function validateLastName(){
+          if(lastName.value.trim()===""){
+              onError(lastName, "Lastname cannot be empty");
+           } else if(lastName.value.trim().length <= 2){
+              onError(lastName, "Lastname must be more than 2 characters");
+           } else{
+               onSuccess(lastName);
+           }
+      }
+      
+      function validateEmail(){
+          if(email.value.trim()===""){
+              onError(email, "Email cannot be empty");
+          }else{
+              if(isValidEmail(email.value.trim())){
+                  onSuccess(email);
+              }else{
+                  onError(email, "Enter a valid email");
+              }
+          }
+      }
+      
+      function validatePassword(){
+          if(password.value.trim()===""){
+              onError(password,"Enter a valid password");
+           }else{
+               onSuccess(password);
+           }
+      }
+      
+      function validateConPassword(){
+          if(confirmPassword.value.trim()===""){
+              onError(confirmPassword, "Enter a valid password");
+           }else if(password.value.trim() !== confirmPassword.value.trim()){
+                  onError(confirmPassword,"Password does not match");
+               }
+               else
+               onSuccess(confirmPassword);
+      }
+      
+      // CLIENT-SIDE VALIDATION ONSUBMIT
+      function validateInput(){
+      
+          validateFirstName();
+          validateLastName();
+          validateEmail();
+          validatePassword();
+          validateConPassword()
+          
+      }
+      
+           function onSuccess(element){
+              if (element === password || element === confirmPassword){
+                  let parent = element.parentElement.parentElement;
+                  let messageEle = parent.querySelector("#errorText");
+                  messageEle.style.display="none"; 
+              }
+              else{
+                  let parent = element.parentElement;
+                  let messageEle = parent.querySelector("#errorText");
+                  messageEle.style.display="none"; 
+              }
+      
+              element.classList.add("success"); 
+              element.classList.remove("error");
+                  
+           }
+      
+           function onError(element, message){
+              if (element === password || element === confirmPassword){
+                  let parent = element.parentElement.parentElement;
+                  let messageEle = parent.querySelector("#errorText");
+                  messageEle.style.display="block";
+                  messageEle.innerText = message; 
+              }
+              else{
+                  let parent = element.parentElement;
+                  let messageEle = parent.querySelector("#errorText");
+                  messageEle.style.display="block";
+                  messageEle.innerText = message; 
+              }
+      
+              element.classList.remove("success"); 
+              element.classList.add("error");
+           }
+      
+      function isValidEmail(email){
+         return /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(email);
+      }
+      
+      
+      
+      // SERVER-SIDE VALIDATION
+      
+      signUpForm.addEventListener("submit", (e) => {
+          e.preventDefault();
+          
+          validateInput()
+      })
+   </script>
+</body>
+</html>

@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
+    <style>
+    input:disabled{
+        width: 50px;
+        background-color: transparent;
+        color: black;
+        outline: none;
+        border: none;
+     }
+    
+    .cartContainer{
+        height: max-content;
+      }
+    
+    </style>
+</head>
+<body>
+  <!-- LOGIN -->
+    <section id="cartContainer">
+        <div class="container-fluid py-3 cartPage">
+          <table>
+            <thead>
+                <th>Name</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Samsung N8</td>
+                    <td class="price" data-price="15000">15,000.00</td>
+                    <td class="qty">
+                        <button class="sub-qty">&minus;</button>
+                        <input type="text" value="5" data-available="12" class="qty-input">
+                        <button class="add-qty">&plus;</button>
+                    </td>
+                    <td class="total"></td>
+                </tr>
+                <tr>
+                    <td>Hp Envy Ultra</td>
+                    <td class="price" data-price="75000">75,000.00</td>
+                    <td class="qty">
+                        <button class="sub-qty">&minus;</button>
+                        <input type="text" value="4" data-available="5" class="qty-input">
+                        <button class="add-qty">&plus;</button>
+                    </td>
+                    <td class="total"></td>
+                </tr>
+                <tr>
+                    <td>Leather Sofa</td>
+                    <td class="price" data-price="110000">110,000.00</td>
+                    <td class="qty">
+                        <button class="sub-qty">&minus;</button>
+                        <input type="text" value="3" data-available="10" class="qty-input">
+                        <button class="add-qty">&plus;</button>
+                    </td>
+                    <td class="total"></td>
+                </tr>
+            </tbody>
+        </table>
+        <br><br>
+        <p>Subtotal: <span id="subTotal"></span></p>
+        </div>
+        </section>
+    
+        <script>
+        const totals = document.querySelectorAll(".total");
+        
+        totals.forEach(total => {
+        const parentEl = total.parentElement;
+        const price = parseInt(parentEl.querySelector(".price").getAttribute("data-price"));
+        const qty   = parseInt(parentEl.querySelector(".qty-input").value);
+        total.setAttribute("data-total", parseInt(price * qty));
+        total.innerHTML = `${formatAsCurrency(price * qty)}`;
+        getSubTotal();
+        });
+        
+        const minusBtn = document.querySelectorAll(".sub-qty");
+        const plusBtn  = document.querySelectorAll(".add-qty");
+        
+        minusBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+        let inputField = btn.nextElementSibling;
+        let inputFieldVal = convert_to_pint(inputField.value);
+        if(inputFieldVal > 1){
+        inputFieldVal -= 1;
+        } else {
+        btn.disabled = true;
+        }
+        inputField.value = inputFieldVal;
+        updateItems(btn, inputFieldVal);
+        })
+        });
+        
+        plusBtn.forEach(btn => {
+        btn.addEventListener("click", () => {
+        let inputField    = btn.previousElementSibling;
+        let limit         = parseInt(inputField.getAttribute("data-available"));
+        let inputFieldVal = convert_to_pint(inputField.value);
+        if(inputFieldVal >= 1 && inputFieldVal < limit){
+        inputFieldVal += 1;
+        }
+        if(inputFieldVal > limit){
+        inputFieldVal = limit;
+        }
+        inputField.value = inputFieldVal;
+        updateItems(btn, inputFieldVal);
+        inputField.previousElementSibling.disabled = false;
+        })
+        });
+        
+        
+        totals.forEach(total => {
+        const parentEl    = total.parentElement;
+        const inputField  = parentEl.querySelector(".qty-input");
+        const limit       = parseInt(inputField.getAttribute("data-available"));
+        const elem        = inputField.nextElementSibling;
+        inputField.addEventListener("keydown", e => {
+        if(e.keyCode == 13){
+        let inputFieldVal = convert_to_pint(inputField.value);
+        if(inputFieldVal < limit){
+        inputField.value = inputFieldVal;
+        } else {
+        inputField.value = limit;
+        }
+        updateItems(elem, inputField.value);
+        }
+        });
+        });
+        
+        
+        function getSubTotal(){
+        let totalPrice = 0
+        totals.forEach(total => {
+        totalPrice += parseInt(total.getAttribute("data-total"));
+        })
+        subTotal.innerHTML = `${formatAsCurrency(totalPrice)}`
+        }
+        
+        function updateItems(elem, qty){
+        qty = parseInt(qty);
+        const parentEl = elem.parentElement.parentElement;
+        const price = parseInt(parentEl.querySelector(".price").getAttribute("data-price"));
+        const total = parentEl.querySelector(".total");
+        total.setAttribute("data-total", parseInt(price * qty));
+        total.innerHTML = `${formatAsCurrency(price * qty)}`;
+        getSubTotal();
+        }
+        
+        function convert_to_pint(a){
+        a = parseInt(a);
+        if ( isNaN(a) ){
+        a = 1;
+        } else if (a < 0) {
+        a = a * -1;
+        } else if(a == 0){
+        a = 1;
+        }
+        return a;
+        }
+        
+        function formatAsCurrency(amount){
+        amount = parseFloat(amount);
+        const new_price = Intl.NumberFormat("en-NG", {
+        style: 'currency',
+        currency: 'USD',
+        }).format(amount);
+        return `<span class="price-symbol">&#8358;</span>${new_price.substring(3, new_price.length)}`;
+        }
+        </script>
+  </body>
+  </html>
+
+      </section>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

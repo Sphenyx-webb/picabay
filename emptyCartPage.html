@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Cart</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
+    <style>
+      .emptyCartContainer{
+         width: 80vw;
+         margin: auto;
+         box-shadow: 0 0 5px 0 rgba(128, 128, 128, 0.3);
+       }
+
+     .emptyCartImgCon{
+       height: 50vh;
+       display: flex;
+       align-items: center;
+        justify-content: center;
+      }
+
+     .emptyCartImgCon img{
+        height: 100%;
+      }
+
+      .text-brand-gray-300{
+        font-size: 32px;
+       }
+
+       button{
+         font-size: 16px;
+       }
+    </style>
+</head>
+<body>
+  <!-- MAIN HEADER -->
+    <header id="mainHeader" class="header"></header>
+
+  <!-- LOGIN -->
+    <section id="emptyCartPage" class="container-fluid">
+        <div class="my-4 p-4 pt-4 emptyCartContainer bg-white rounded-4">
+           <div class="emptyCartImgCon">
+            <img src="./static/images/icons/Empty cart svg.svg" alt="" class="img-fluid">
+           </div>
+           <div class="d-flex flex-column align-items-center mt-3">
+            <p class="text-brand-gray-300 mb-3">Oops!.....There's nothing here to see</p>
+            <a href="./index.html"><button class="btn btn-main-300"><p>Start shopping</p></button></a>
+           </div>
+        </div>
+      </section>
+
+   <!-- MAIN FOOTER -->
+    <footer class="footer text-light bg-brand-dark pt-5 pb-4 mt-0"></footer>
+
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="static/js/script.js"></script>
+</body>
+</html>

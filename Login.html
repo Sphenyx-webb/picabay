@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <!-- Font-awesome CSS -->
+    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <!-- Normalize CSS -->
+    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <!-- Main CSS-->
+    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="static/css/SignUpsignIn.css" type="text/css">
+    <!-- favicon links -->
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" sizes="32x32" href="./favicon-32x32.png" type="image/png" >
+    <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
+    <link rel="manifest" href="./site.webmanifest">
+</head>
+<body>
+  <!-- LOGIN -->
+    <section id="signInContainer">
+        <div class="container-fluid-lg signInContainer">
+            <div
+              class="bg-brand-gradient d-flex flex-column align-items-center justify-content-center hero-section"
+            >
+            <div class="backHome">
+              <a class="navbar-brand" href="/index.html">
+                <span class="text-white">
+                  <i class="fas fa-arrow-left"></i>
+                </span>
+                <span>
+                  <img src="static/images/logo/logo.png" alt="Picabay's logo">
+                </span>
+            </a>
+          </div>
+              <img
+                src="./static/images/icons/sign up-sign in.svg"
+                alt="sign up"
+                class="img-fluid illustration-img"
+              />
+              <p class="mt-3 text-white text-center font-regular largeText">Hi there, Welcome back</p>
+              <p class="mb-3 text-brand-gray-200"> Shop with the best deals on PicaBay</p>
+              <button type="button" class="rounded-circle btn bg-light text-center text-main-300" id="signInInit"><span class="fa fa-chevron-right"></span></button>
+            </div>
+            
+            <div
+              class="bg-alt d-flex flex-column align-items-center justify-content-center h-100 form-container"
+            >
+              <div
+                id="loginFormContainer"
+                class="shadow bg-white p-4 rounded-4 form-inner-container"
+              >
+                <h3 class="mt-1 mb-4">Login</h3>
+
+                <form action="#" method="GET" class="font-regular" name="signInForm" id="signInForm" novalidate>
+                  <div class="mb-3">
+                    <label for="username" class="form-label">Email</label>
+                    <input
+                    type="email"
+                    id="username"
+                    class="form-control bg-brand-gray-200 rounded-4"
+                    placeholder=""
+                    required
+                  />
+                  <div class="valid-feedback">
+                    Looks good
+                  </div>
+                  </div>
+
+                  <div class="mb-3">
+                    <label for="password" class="form-label">Password</label>
+                    <div class="passwordInputBox">
+                      <input
+                      type="password"
+                      id="password"
+                      class="form-control bg-brand-gray-200 rounded-4"
+                      placeholder=""
+                      required
+                    />
+
+                    <button type="button" class="btn rounded-end-4 passwordToggler">
+                      <span class="span fa fa-eye-slash"></span>
+                    </button>
+                    </div>
+                  </div>
+
+                  <div class="d-flex align-items-center justify-content-between my-4">
+                    <div class="form-check">
+                      <input 
+                       class="form-check-input" 
+                       type="checkbox"
+                       value="" 
+                       id="flexCheckDefault"
+                       name="flexCheckDefault"
+                      />
+                      <label class="form-check-label text-brand-dark" for="flexCheckDefault">
+                        <p>Remember Me</p>
+                      </label>
+                    </div>
+                    
+                    <div>
+                      <a href="#">Forgotten password?</a>
+                    </div>
+                  </div>
+                  <div class="mb-3">
+                    <button type="submit" class="btn btn-main-300 w-100">Login</button>
+                  </div>
+                </form>
+                <p class="text-center mt-1">Don't have an account? <a href="./signUp.html" id="signUpLink">Create an account</a></p>
+              </div>
+            </div>
+        </div>
+      </section>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
+    <script src="static/js/script.js"></script>
+    <script>
+      // ARROW BUTTON
+      const lgBtn = document.querySelector("#signInInit");
+      const lgForm = document.querySelector("#signInForm");
+      lgBtn.addEventListener("click", () => {
+        lgForm.firstElementChild.children[0].focus();
+      });
+    </script>
+</body>
+</html>

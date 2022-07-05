@@ -26,10 +26,9 @@ Features
     --brand-dark: #2D2D2D;
     --brand-dark-100: #3F3D3D;
     --brand-gray: #F2F3F5;
+    --brand-gray-200: #DBDEE0; 
     --brand-gray-300: #999A9C;
     --alt-color: #FFF5E5;
-    --brand-gray: #F2F3F5;
-    --brand-gray-300: #999A9C;
 }
 
 @font-face {
@@ -93,6 +92,8 @@ a:hover{
     outline: 0 !important;
 }
 
+
+
 p{
     line-height: 1.5;
     font-family: 'MontserratRegular';
@@ -104,6 +105,15 @@ p{
 h1, h2, h3, h4, h5, h6{
     font-family: 'MontserratBlack';
     display: block;
+}
+
+/* BORDER RADIUS CLASSES */
+.rounded-4{
+    border-radius: 0.5rem;
+}
+.rounded-end-4{
+    border-bottom-right-radius: 0.5rem;
+    border-top-right-radius: 0.5rem;
 }
 
 /* BACKGROUND CLASSES */
@@ -125,6 +135,9 @@ h1, h2, h3, h4, h5, h6{
 .bg-brand-gray{
     background: var(--brand-gray);
 }
+.bg-brand-gray-200{
+    background: var(--brand-gray-200);
+}
 .bg-brand-gray-300{
     background: var(--brand-gray-300);
 }
@@ -137,14 +150,8 @@ h1, h2, h3, h4, h5, h6{
 .bg-alt{
     background: var(--alt-color);
 }
-.bg-brand-gray {
-    background: var(--brand-gray);
-}
-.bg-brand-gray-300{
-    background: var(--brand-gray-300);
-}
 .bg-brand-gradient {
-    background: rgb(0,182,18);
+    background: rgb(9, 133, 22);
     background: -moz-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
     background: -webkit-radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
     background: radial-gradient(circle, rgba(0,182,18,1) 32%, rgba(9,141,22,1) 88%);
@@ -172,7 +179,10 @@ h1, h2, h3, h4, h5, h6{
     color: var(--alt-color);
 }
 .text-brand-gray{
-    color: var(--brand-dark);
+    color: var(--brand-gray);
+}
+.text-brand-gray-200{
+    color: var(--brand-gray-200);
 }
 .text-brand-gray-300{
     color: var(--brand-gray-300);
@@ -246,7 +256,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .input-box{
-    width: 80%;
+    width: 90%;
 } 
 
 .search-box input{
@@ -310,6 +320,7 @@ h1, h2, h3, h4, h5, h6{
 .cart-section{
     display: flex;
     align-items: center;
+    cursor: pointer;
     height: 30px;
     border-radius: 8px;
     padding: 0 0.5rem;
@@ -362,7 +373,7 @@ h1, h2, h3, h4, h5, h6{
   }
 
   .carousel-indicators .active {
-      background: var(--main-color-400);
+      background: var(--main-color);
   }
 
   aside{
@@ -374,13 +385,114 @@ h1, h2, h3, h4, h5, h6{
 
   .aside-div{
       background: var(--brand-gray-300);
-      height: 150px;
+      height: 170px;
       width: 100%;
       border-radius: 10px;
   }
 
 
-/* FOOTER */
+  /* RECOMMENDED PRODUCTS  */
+  .recommendedProducts a{
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+  }
+
+  .product-box{
+      height: auto;
+      margin: 12px;
+      padding: 10px;
+      padding-bottom: 12px;
+      border-radius: 8px;
+      background: white;
+      box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.1);
+  }
+
+  .img-box{
+      height: 150px;
+      width: 100%;
+      margin: auto;
+      margin-bottom: 8px;
+      border-radius: 28px;
+      background: var(--main-color-100);
+      display: flex;
+      align-items: center;
+  }
+
+  .img-box img:hover{
+      transform: scale(1.15);
+  }
+
+  .angle-right-container{
+      background: var(--main-color-300);
+      color: var(--brand-gray);
+      height: 12px;
+      width: 12px;
+      border-radius: 50%;
+      margin-left: 5px;
+      font-size: 8px;
+      line-height: 12px;
+      display: inline-block;
+      text-align: center;
+  }
+
+  /* BOTTOM ADS */
+  .bottom-ads img{
+      border-radius: 10px;
+  }
+
+  .ad2-con{
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+  }
+
+  .ad2{
+      width: 46vw;
+      height: 125px;
+      background: var(--brand-gray-300);
+      border-radius: 10px;
+      margin-bottom: 18px;
+  }
+
+  /* -- BEST SELLING PRODUCTS -- */
+  .bestSellingProducts a{
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+  }
+
+  .products-row{
+      display: flex;
+      overflow-x: scroll;
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+      margin-bottom: 40px;
+  }
+
+  .products-row::-webkit-scrollbar{
+      display: none;
+  }
+
+  .best-product{
+    margin: 12px;
+    margin-left: 0;
+    margin-right: 20px;
+    border-radius: 8px;
+    background: white;
+    box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.1);
+  }
+
+  .productInfo{
+    height: 170px;
+  }
+
+  .fa-star{
+    color: var(--main-color);
+  }
+  
+  
+  /* FOOTER */
 footer a p{
     line-height: 25px;
     width: max-content;
@@ -438,3 +550,8 @@ footer .searchBtn p{
       width: max-content;
       z-index: 2;
   }
+
+
+  
+
+  
