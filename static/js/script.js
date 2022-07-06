@@ -79,27 +79,27 @@ const links = document.querySelectorAll("a.smooth-scroll");
             <div class="col">
                 <div>
                     <a href="#"><p class="mb-3">ABOUT PICABAY</p></a>
-                    <a href="#"><p>Contact us</p></a>
-                    <a href="#"><p>About us</p></a>
-                    <a href="#"><p>Our Blog</p></a>
-                    <a href="#"><p>Forum</p></a>
-                    <a href="#"><p>Terms & Conditions</p></a>
+                    <a href="#" class="footer-sub-link"><p>Contact us</p></a>
+                    <a href="#" class="footer-sub-link"><p>About us</p></a>
+                    <a href="#" class="footer-sub-link"><p>Our Blog</p></a>
+                    <a href="#" class="footer-sub-link"><p>Forum</p></a>
+                    <a href="#" class="footer-sub-link"><p>Terms & Conditions</p></a>
                   </div>
             </div>
             <div class="col">
                 <div>
                     <a href="#"><p class="mb-3">PAYMENT</p></a>
-                    <a href="#"><p>Manage Cards</p></a>
+                    <a href="#" class="footer-sub-link"><p>Manage Cards</p></a>
                   </div>
             </div>
             <div class="col">
                 <div>
                     <a href="#"><p class="mb-3">BUYING ON PICABAY</p></a>
-                    <a href="#"><p>FAQs</p></a>
-                    <a href="#"><p>Delivery</p></a>
-                    <a href="#"><p>Return Policy</p></a>
-                    <a href="#"><p>Digital Services</p></a>
-                    <a href="#"><p>Bulk Purchase</p></a>
+                    <a href="#" class="footer-sub-link"><p>FAQs</p></a>
+                    <a href="#" class="footer-sub-link"><p>Delivery</p></a>
+                    <a href="#" class="footer-sub-link"><p>Return Policy</p></a>
+                    <a href="#" class="footer-sub-link"><p>Digital Services</p></a>
+                    <a href="#" class="footer-sub-link"><p>Bulk Purchase</p></a>
                   </div>
             </div>
             <div class="col">

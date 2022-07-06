@@ -236,7 +236,7 @@ h1, h2, h3, h4, h5, h6{
 
 .sidebar-toggler{
     color: var(--brand-gray);
-    font-size: 18px;
+    font-size: 1.125rem;
     font-weight: 400;
     margin-right: 40px;
 }
@@ -266,14 +266,14 @@ h1, h2, h3, h4, h5, h6{
     border: none;
     outline: none;
     font-family: 'MontserratRegular', sans-serif;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 400;
     padding-left: 0.8rem;
 }
 
 .searchBtn{
     height: 30px;
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: lighter;
     border-radius: 0 8px 8px 0;
 }
@@ -294,13 +294,13 @@ h1, h2, h3, h4, h5, h6{
     color: var(--brand-gray);
     display: grid;
     place-items: center;
-    font-size: 10px;
+    font-size: 0.625rem;
     margin-right: 5px;
 }
 
 .fa-circle-question{
     color: var(--main-color-300);
-    font-size: 18px;
+    font-size: 1.125rem;
 }
 
 .profile-img{
@@ -314,7 +314,7 @@ h1, h2, h3, h4, h5, h6{
 
 .dropdown-icon{
     color: var(--brand-gray-300);
-    font-size: 12px;
+    font-size: 0.75rem;
 }
 
 .cart-section{
@@ -328,11 +328,11 @@ h1, h2, h3, h4, h5, h6{
 
 .fa-cart-shopping{
     color: var(--brand-gray);
-    font-size: 14px;
+    font-size: 0.88rem;
 }
 
 .my-cart{
-    font-size: 8px;
+    font-size: 0.5rem;
     font-weight: 200;
     color: var(--alt-color);
 }
@@ -348,7 +348,7 @@ h1, h2, h3, h4, h5, h6{
 }
 
 .items-num p{
-    font-size: 12px;
+    font-size: 0.75rem;
     font-weight: 500;
 }
 
@@ -405,7 +405,7 @@ h1, h2, h3, h4, h5, h6{
       padding-bottom: 12px;
       border-radius: 8px;
       background: white;
-      box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.1);
+      box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.15);
   }
 
   .img-box{
@@ -468,6 +468,7 @@ h1, h2, h3, h4, h5, h6{
       -ms-overflow-style: none;
       scrollbar-width: none;
       margin-bottom: 40px;
+      padding-left: 5px;
   }
 
   .products-row::-webkit-scrollbar{
@@ -480,7 +481,7 @@ h1, h2, h3, h4, h5, h6{
     margin-right: 20px;
     border-radius: 8px;
     background: white;
-    box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.1);
+    box-shadow: 0px 0px 5px 0px rgba(78, 75, 75, 0.15);
   }
 
   .productInfo{
@@ -494,9 +495,14 @@ h1, h2, h3, h4, h5, h6{
   
   /* FOOTER */
 footer a p{
-    line-height: 25px;
+    line-height: 1.6rem;
     width: max-content;
     color: var(--brand-gray);
+}
+
+.footer-sub-link p{
+    font-size: 0.88rem;
+    color: var(--brand-gray-200);
 }
 
 footer a p:hover, footer a p:focus{
@@ -515,7 +521,7 @@ footer .searchBtn{
 }
 
 footer .searchBtn p{
-    font-size: 14px;
+    font-size: 0.88rem;
 }
 
 .social{

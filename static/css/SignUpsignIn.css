@@ -196,7 +196,7 @@ input[type="password"]{
     }
 }
 
-@media screen and (max-height: 320px) {
+@media screen and (max-height: 560px) {
     .hero-section .illustration-img{
         display: none;
     }
