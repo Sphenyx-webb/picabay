@@ -228,6 +228,11 @@ h1, h2, h3, h4, h5, h6{
     color: var(--brand-gray);
 }
 
+/* CURRENCY */
+.dollar-sign{
+    margin-right: 2px;
+}
+
 /* NAV-BAR */
 .navbar .container-fluid{
     padding-top: 0.2rem;
@@ -266,7 +271,7 @@ h1, h2, h3, h4, h5, h6{
     border: none;
     outline: none;
     font-family: 'MontserratRegular', sans-serif;
-    font-size: 0.75rem;
+    font-size: 0.8rem;
     font-weight: 400;
     padding-left: 0.8rem;
 }
@@ -556,6 +561,8 @@ footer .searchBtn p{
       width: max-content;
       z-index: 2;
   }
+
+  
 
 
   

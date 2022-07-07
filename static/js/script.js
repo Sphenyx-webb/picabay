@@ -11,8 +11,9 @@ const links = document.querySelectorAll("a.smooth-scroll");
         });
       });
 
-      const allHeaders = document.querySelectorAll(".header")
-      const allFooters = document.querySelectorAll(".footer")
+      const allHeaders = document.querySelectorAll(".header");
+      const allFooters = document.querySelectorAll(".footer");
+      const allRatings = document.querySelectorAll(".rating")
 
       allHeaders.forEach(header => {
         header.innerHTML = `
@@ -30,7 +31,7 @@ const links = document.querySelectorAll("a.smooth-scroll");
     
                     <div class="search-box d-flex align-items-center justify-content-between">
                         <span class="input-box">
-                            <input type="text" placeholder="Search for products, brands and categories...">
+                            <input type="search" placeholder="Search for products, brands and categories...">
                         </span>
                         <button class="btn btn-main searchBtn">
                             <span class="search-icon"><i class="fa fa-search" aria-hidden="true"></i></span>
@@ -133,6 +134,18 @@ const links = document.querySelectorAll("a.smooth-scroll");
             </div>
         </div>
     </div>
+        `
+      });
+
+      allRatings.forEach(rating => {
+        rating.innerHTML = `
+        <div>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+          <i class="fas fa-star"></i>
+       </div>
         `
       })
       
