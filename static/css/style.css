@@ -20,6 +20,7 @@ Features
 :root {
     --main-color: #00B612;
     --main-color-100: #58DF66;
+    --main-color-200: #19db2c;
     --main-color-300: #098D16;
     --main-color-400: #035916;
     --main-color-500: #002709;
@@ -122,6 +123,9 @@ h1, h2, h3, h4, h5, h6{
 }
 .bg-main-100{
     background: var(--main-color-100);
+}
+.bg-main-200{
+    background: var(--main-color-200);
 }
 .bg-main-300 {
     background: var(--main-color-300);

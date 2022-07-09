@@ -55,7 +55,7 @@ const links = document.querySelectorAll("a.smooth-scroll");
                         <span class="dropdown-icon"><i class="fas fa-angle-down"></i></span>
                     </div>
     
-                    <div class="cart-section bg-main">
+                    <div class="cart-section bg-main" id="cart-section">
                         <span>
                             <i class="fa-solid fa-cart-shopping me-2"></i>
                         </span>
@@ -63,7 +63,7 @@ const links = document.querySelectorAll("a.smooth-scroll");
                             <p class="my-cart">My <br> Cart</p>
                         </span>
                         <span class="items-num">
-                            <p>0</p>
+                            <p class="numOfCartItems"></p>
                         </span>
                     </div>
                 </div>
@@ -147,7 +147,27 @@ const links = document.querySelectorAll("a.smooth-scroll");
           <i class="fas fa-star"></i>
        </div>
         `
+      });
+
+
+    //  CART MODIFICATIONS
+      const numOfCartItems = document.querySelectorAll(".numOfCartItems")
+      const cart = document.getElementById("cart-section");
+      var numOfItems = 3;
+
+      numOfCartItems.forEach(numOfCartItem => {
+        numOfCartItem.innerText = numOfItems
       })
+
+      cart.addEventListener("click", () => {
+        if(numOfItems === 0){
+            window.location.pathname = "/emptyCartPage.html"
+        }
+        else  if(numOfItems > 0){
+            window.location.pathname = "/cartPage.html"
+        }
+      })
+
       
 
     //   const products = document.querySelectorAll(".item")
