@@ -6,13 +6,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Cart</title>
     <!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="./vendor/bootstrap/css/bootstrap.min.css" type="text/css">
     <!-- Font-awesome CSS -->
-    <link rel="stylesheet" href="vendor/fontawesome/css/all.min.css" type="text/css">
+    <link rel="stylesheet" href="./vendor/fontawesome/css/all.min.css" type="text/css">
     <!-- Normalize CSS -->
-    <link rel="stylesheet" href="static/css/normalize.css" type="text/css">
+    <link rel="stylesheet" href="./static/css/normalize.css" type="text/css">
     <!-- Main CSS-->
-    <link rel="stylesheet" href="static/css/style.css" type="text/css">
+    <link rel="stylesheet" href="./static/css/style.css" type="text/css">
     <!-- favicon links -->
     <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
     <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
@@ -20,16 +20,42 @@
     <link rel="icon" sizes="16x16" href="./favicon-16x16.png" type="image/png" >
     <link rel="manifest" href="./site.webmanifest">
     <style>
-    input:disabled{
-        width: 50px;
-        background-color: transparent;
-        color: black;
-        outline: none;
-        border: none;
-     }
+      #emptyCartPage{
+        display: none;
+       }
+
+       #emptyCartPage .emptyCartContainer{
+         width: 80vw;
+         margin: auto;
+         box-shadow: 0 0 5px 0 rgba(128, 128, 128, 0.3);
+       }
+
+
+     #emptyCartPage .emptyCartImgCon{
+       height: 50vh;
+       display: flex;
+       align-items: center;
+        justify-content: center;
+      }
+
+      #emptyCartPage .emptyCartImgCon img{
+        height: 100%;
+      }
+
+      #emptyCartPage .text-brand-gray-300{
+        font-size: 32px;
+       }
+
+       #emptyCartPage button p{
+         font-size: 1.5rem;
+       }
     
-    .cartContainer{
+      .cartContainer{
         height: max-content;
+      }
+
+      .cartContainer .bg-white{
+        box-shadow: 0 0 5px 0 rgba(128, 128, 128, 0.3);
       }
 
       .back p{
@@ -71,13 +97,15 @@
          padding: 2px;
       }
 
-      .qty-input{
+      input:disabled{
         width: 50px;
         height: 50px;
         text-align: center;
+        background-color: transparent;
+        color: black;
         border: 2px solid #DBDEE0;
         font-weight: bold;
-      }
+     }
 
       .add-qty, .sub-qty{
         width: 30px;
@@ -116,14 +144,25 @@
       .subtotal p, .checkout-btn p{
         font-size: 18px;
       }
-    
     </style>
 </head>
 <body>
      <!-- MAIN HEADER -->
      <header id="mainHeader" class="header"></header>
 
-  <!-- LOGIN -->
+     <section id="emptyCartPage" class="container-fluid">
+        <div class="my-4 p-4 pt-4 emptyCartContainer bg-white rounded-4">
+           <div class="emptyCartImgCon">
+            <img src="./static/images/icons/Empty cart svg.svg" alt="" class="img-fluid">
+           </div>
+           <div class="d-flex flex-column align-items-center mt-3">
+            <p class="text-brand-gray-300 mb-3">Oops!.....There's nothing here to see</p>
+            <a href="./index.html"><button class="btn btn-main-400 px-3"><p>Start shopping</p></button></a>
+           </div>
+        </div>
+      </section>
+
+  <!-- CART -->
     <section id="cartPage" class="cartPage">
         <div class="container-fluid p-5 cartContainer">
            <div class="container-fluid bg-white rounded-4 py-5 px-5">
@@ -170,20 +209,22 @@
                                 <p class="spec text-brand-gray-300">16gb RAM, 512gb SSD, Intel Core i7</p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="price" data-price="800">800</p>
+                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span><span  class="price" data-price="600"></span></p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center">
-                                    <button class="btn btn-main sub-qty">&minus;</button>
-                                    <input type="text" value="1" data-available="10" class="qty-input mx-2 rounded-2">
-                                    <button class="btn btn-main add-qty">&plus;</button>
+                                    <button class="btn btn-main-300 sub-qty" disabled>&minus;</button>
+                                    <input type="text" value="1" data-available="10" class="qty-input mx-2 rounded-2" disabled>
+                                    <button class="btn btn-main-300 add-qty">&plus;</button>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="total">800</p>
+                                <p class="fw-bold price-cont"><span class="total"></span></p>
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-trash"></i>
+                                <span class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
                             </div>
                         </div>
 
@@ -198,20 +239,22 @@
                                 <p class="spec text-brand-gray-300">16gb RAM, 512gb SSD, Intel Core i7</p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="price" data-price="800">800</p>
+                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span><span  class="price" data-price="800"></span></p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center">
-                                    <button class="btn btn-main sub-qty">&minus;</button>
-                                    <input type="text" value="1" data-available="10" class="qty-input mx-2 rounded-2">
-                                    <button class="btn btn-main add-qty">&plus;</button>
+                                    <button class="btn btn-main-300 sub-qty" disabled>&minus;</button>
+                                    <input type="text" value="1" data-available="14" class="qty-input mx-2 rounded-2" disabled>
+                                    <button class="btn btn-main-300 add-qty">&plus;</button>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="total">800</p>
+                                <p class="fw-bold price-cont"><span class="total"></span></p>
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-trash"></i>
+                                <span class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
                             </div>
                         </div>
 
@@ -226,30 +269,32 @@
                                 <p class="spec text-brand-gray-300">16gb RAM, 512gb SSD, Intel Core i7</p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="price" data-price="800">800</p>
+                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span><span  class="price" data-price="1000"></span></p>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
                                 <div class="d-flex align-items-center">
-                                    <button class="btn btn-main sub-qty">&minus;</button>
-                                    <input type="text" value="1" data-available="10" class="qty-input mx-2 rounded-2">
-                                    <button class="btn btn-main add-qty">&plus;</button>
+                                    <button class="btn btn-main-300 sub-qty" disabled>&minus;</button>
+                                    <input type="text" value="1" data-available="12" class="qty-input mx-2 rounded-2" disabled>
+                                    <button class="btn btn-main-300 add-qty">&plus;</button>
                                 </div>
                             </div>
                             <div class="d-flex align-items-center justify-content-center">
-                                <p class="fw-bold price-cont"><span class="dollar-sign">$</span class="total">800</p>
+                                <p class="fw-bold price-cont"><span class="total"></span></p>
                             </div>
                             <div class="d-flex justify-content-center align-items-center">
-                                <i class="fa-solid fa-trash"></i>
+                                <span class="delete-btn">
+                                    <i class="fa-solid fa-trash"></i>
+                                </span>
                             </div>
                         </div>
                     </div>
                     <div class="cart-total-section d-flex justify-content-between align-items-center pt-5">
                         <div class="d-flex justify-content-between px-3 py-2 rounded-3 subtotal">
                             <p class="fw-bold">Subtotal</p>
-                            <h6 class="fw-bold"><span class="dollar-sign">$</span id="subTotal">2,400</h6>
+                            <h5 class="fw-bold"><span id="subTotal"></span></h5>
                         </div>
                         <div>
-                            <button class="btn btn-main-300 w-100 rounded-3 px-3 py-2 checkout-btn"><p>Checkout</p></button>
+                            <button class="btn btn-main-400 w-100 rounded-3 px-3 py-2 checkout-btn"><p>Checkout</p></button>
                         </div>
                     </div>
                 </div>
@@ -260,112 +305,10 @@
 
     <!-- MAIN FOOTER -->
        <footer class="footer text-light bg-brand-dark pt-5 pb-4 mt-0"></footer>
-    
-        <!-- <script>
-        const totals = document.querySelectorAll(".total");
-        
-        totals.forEach(total => {
-        const parentEl = total.parentElement;
-        const price = parseInt(parentEl.querySelector(".price").getAttribute("data-price"));
-        const qty   = parseInt(parentEl.querySelector(".qty-input").value);
-        total.setAttribute("data-total", parseInt(price * qty));
-        total.innerHTML = `${formatAsCurrency(price * qty)}`;
-        getSubTotal();
-        });
-        
-        const minusBtn = document.querySelectorAll(".sub-qty");
-        const plusBtn  = document.querySelectorAll(".add-qty");
-        
-        minusBtn.forEach(btn => {
-        btn.addEventListener("click", () => {
-        let inputField = btn.nextElementSibling;
-        let inputFieldVal = convert_to_pint(inputField.value);
-        if(inputFieldVal > 1){
-        inputFieldVal -= 1;
-        } else {
-        btn.disabled = true;
-        }
-        inputField.value = inputFieldVal;
-        updateItems(btn, inputFieldVal);
-        })
-        });
-        
-        plusBtn.forEach(btn => {
-        btn.addEventListener("click", () => {
-        let inputField    = btn.previousElementSibling;
-        let limit         = parseInt(inputField.getAttribute("data-available"));
-        let inputFieldVal = convert_to_pint(inputField.value);
-        if(inputFieldVal >= 1 && inputFieldVal < limit){
-        inputFieldVal += 1;
-        }
-        if(inputFieldVal > limit){
-        inputFieldVal = limit;
-        }
-        inputField.value = inputFieldVal;
-        updateItems(btn, inputFieldVal);
-        inputField.previousElementSibling.disabled = false;
-        })
-        });
-        
-        
-        totals.forEach(total => {
-        const parentEl    = total.parentElement;
-        const inputField  = parentEl.querySelector(".qty-input");
-        const limit       = parseInt(inputField.getAttribute("data-available"));
-        const elem        = inputField.nextElementSibling;
-        inputField.addEventListener("keydown", e => {
-        if(e.keyCode == 13){
-        let inputFieldVal = convert_to_pint(inputField.value);
-        if(inputFieldVal < limit){
-        inputField.value = inputFieldVal;
-        } else {
-        inputField.value = limit;
-        }
-        updateItems(elem, inputField.value);
-        }
-        });
-        });
-        
-        
-        function getSubTotal(){
-        let totalPrice = 0
-        totals.forEach(total => {
-        totalPrice += parseInt(total.getAttribute("data-total"));
-        })
-        subTotal.innerHTML = `${formatAsCurrency(totalPrice)}`
-        }
-        
-        function updateItems(elem, qty){
-        qty = parseInt(qty);
-        const parentEl = elem.parentElement.parentElement;
-        const price = parseInt(parentEl.querySelector(".price").getAttribute("data-price"));
-        const total = parentEl.querySelector(".total");
-        total.setAttribute("data-total", parseInt(price * qty));
-        total.innerHTML = `${formatAsCurrency(price * qty)}`;
-        getSubTotal();
-        }
-        
-        function convert_to_pint(a){
-        a = parseInt(a);
-        if ( isNaN(a) ){
-        a = 1;
-        } else if (a < 0) {
-        a = a * -1;
-        } else if(a == 0){
-        a = 1;
-        }
-        return a;
-        }
-        
-        function formatAsCurrency(amount){
-        amount = parseFloat(amount);
-        const new_price = Intl.NumberFormat("en-NG", {
-        style: 'currency',
-        currency: 'USD',
-        }).format(amount);
-        return `<span class="price-symbol">&#8358;</span>${new_price.substring(3, new_price.length)}`;
-        }
-        </script> -->
+
+    <script>
+       
+     </script>
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script src="static/js/script.js"></script>
 </body>

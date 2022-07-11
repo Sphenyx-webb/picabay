@@ -234,18 +234,18 @@ h1, h2, h3, h4, h5, h6{
 
 /* CURRENCY */
 .dollar-sign{
-    margin-right: 2px;
+    margin-right: 0.07rem;
 }
 
 /* NAV-BAR */
 .navbar .container-fluid{
-    padding-top: 0.2rem;
-    padding-bottom: 0.2rem;
+    padding-top: 0.25rem;
+    padding-bottom: 0.25rem;
 }
 
 .sidebar-toggler{
     color: var(--brand-gray);
-    font-size: 1.125rem;
+    font-size: 1.5rem;
     font-weight: 400;
     margin-right: 40px;
 }
@@ -253,14 +253,15 @@ h1, h2, h3, h4, h5, h6{
 .navbar-brand{
     padding: 0;
     margin-top: -5px;
-    margin-right: 30px;
+    margin-right: 60px;
 }
+
 
 .search-box{
     background-color: var(--brand-gray);
-    height: 30px;
-    width: 480px;
-    border-radius: 8px;
+    height: 35px;
+    width: 600px;
+    border-radius: 10px;
     margin-right: 30px;
 }
 
@@ -275,16 +276,17 @@ h1, h2, h3, h4, h5, h6{
     border: none;
     outline: none;
     font-family: 'MontserratRegular', sans-serif;
-    font-size: 0.8rem;
+    font-size: 0.85rem;
     font-weight: 400;
     padding-left: 0.8rem;
 }
 
 .searchBtn{
-    height: 30px;
-    font-size: 0.75rem;
+    height: 35px;
+    width: 60px;
+    font-size: 1rem;
     font-weight: lighter;
-    border-radius: 0 8px 8px 0;
+    border-radius: 0 10px 10px 0;
 }
 
 .help-section, .profile-section{
@@ -293,28 +295,28 @@ h1, h2, h3, h4, h5, h6{
 
 .help-section p{
     color: var(--brand-gray);
+    font-size: 1.2rem;
 }
 
 .help-icon{
-    width: 20px;
-    height: 20px;
+    width: 24px;
+    height: 24px;
     border-radius: 50%;
     background: var(--main-color-300);
     color: var(--brand-gray);
     display: grid;
     place-items: center;
-    font-size: 0.625rem;
+    font-size: 0.8rem;
     margin-right: 5px;
 }
 
 .fa-circle-question{
     color: var(--main-color-300);
-    font-size: 1.125rem;
 }
 
 .profile-img{
-    height: 26px;
-    width: 26px;
+    height: 30px;
+    width: 30px;
     border-radius: 50%;
     object-fit: cover;
     border: none !important;
@@ -323,25 +325,25 @@ h1, h2, h3, h4, h5, h6{
 
 .dropdown-icon{
     color: var(--brand-gray-300);
-    font-size: 0.75rem;
+    font-size: 1rem;
 }
 
 .cart-section{
     display: flex;
     align-items: center;
     cursor: pointer;
-    height: 30px;
+    height: 35px;
     border-radius: 8px;
-    padding: 0 0.5rem;
+    padding: 0 0.6rem;
 }
 
 .fa-cart-shopping{
     color: var(--brand-gray);
-    font-size: 0.88rem;
+    font-size: 1.2rem;
 }
 
 .my-cart{
-    font-size: 0.5rem;
+    font-size: 0.75rem;
     font-weight: 200;
     color: var(--alt-color);
 }
@@ -349,15 +351,15 @@ h1, h2, h3, h4, h5, h6{
 .items-num{
     background-color: var(--brand-gray);
     color: var(--brand-dark);
-    width: 20px;
-    height: 20px;
+    width: 26px;
+    height: 26px;
     border-radius: 50%;
     display: grid;
     place-items: center;
 }
 
 .items-num p{
-    font-size: 0.75rem;
+    font-size: 1rem;
     font-weight: 500;
 }
 

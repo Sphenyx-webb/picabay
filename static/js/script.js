@@ -18,7 +18,7 @@ const links = document.querySelectorAll("a.smooth-scroll");
       allHeaders.forEach(header => {
         header.innerHTML = `
         <nav id="mainMenu" class="navbar bg-main-400 ">
-        <div class="container-fluid">
+        <div class="container-fluid px-5">
             <div class="sidebar-toggler" type="button">
                 <span class="sidebar-toggler-icon"><i class="fas fa-bars"></i></span>
             </div>
@@ -26,10 +26,10 @@ const links = document.querySelectorAll("a.smooth-scroll");
             <div class="d-flex align-items-center justify-content-between">
                 <div class="d-flex align-items-center">
                     <a class="navbar-brand" href="/index.html">
-                        <img src="static/images/logo/logo.png" alt="Picabay's logo">
+                        <img src="static/images/logo/logo.png" alt="Picabay's logo" class="brand-logo">
                     </a>
     
-                    <div class="search-box d-flex align-items-center justify-content-between">
+                    <div class="search-box d-flex align-items-center justify-content-between rounded-4 me-5">
                         <span class="input-box">
                             <input type="search" placeholder="Search for products, brands and categories...">
                         </span>
@@ -150,67 +150,108 @@ const links = document.querySelectorAll("a.smooth-scroll");
       });
 
 
-    //  CART MODIFICATIONS
+    //   CART
+      const cartItems = document.querySelectorAll(".cart-item");
+      const subTotal  = document.querySelector("#subTotal");
       const numOfCartItems = document.querySelectorAll(".numOfCartItems")
-      const cart = document.getElementById("cart-section");
-      var numOfItems = 3;
+      const cartPage = document.getElementById("cartPage")
+      const emptyCartPage = document.getElementById("emptyCartPage")
 
-      numOfCartItems.forEach(numOfCartItem => {
-        numOfCartItem.innerText = numOfItems
-      })
+      cartItems.forEach(cartItem => {
+          var priceElem = cartItem.querySelector(".price");
+          var price = parseInt(priceElem.getAttribute("data-price"));
+          var qtyElem = cartItem.querySelector(".qty-input");
+          var qty = parseInt(qtyElem.value);
+          var limit = parseInt(qtyElem.getAttribute("data-available"));
+          var minusBtn  = cartItem.querySelector(".sub-qty");
+          var plusBtn   = cartItem.querySelector(".add-qty");
+          var deleteBtn = cartItem.querySelector(".delete-btn")
+          priceElem.innerHTML = priceElem.getAttribute("data-price")
+          
+          
+          //calculate total
+          getTotal(price, qty, cartItem);
 
-      cart.addEventListener("click", () => {
+          //minus button
+          minusBtn.addEventListener("click", () => {
+              qty -= 1
+              qtyElem.value = qty
+              plusBtn.disabled  = false
+              if(qty === 1){
+                 minusBtn.disabled = true
+              }
+              updateItems(cartItem, qty);
+      });
+
+          //plus button
+           plusBtn.addEventListener("click", () => {
+              minusBtn.disabled = false
+              if(qty < limit){
+                  qty += 1
+                  qtyElem.value = qty
+              }
+              else{
+                  plusBtn.disabled  = true
+              }
+              updateItems(cartItem, qty);
+          }); 
+           
+        //   delete button
+          deleteBtn.addEventListener("click", () => {
+              let qty = 0
+              qtyElem.value = qty
+              updateItems(cartItem, qty);
+              cartItem.remove()
+          }); 
+          
+      });
+
+      function getTotal(price, qty, parentEl){
+          const totalEl = parentEl.querySelector(".total");
+          const total   = price * qty;
+          totalEl.setAttribute("data-total", total);
+          totalEl.innerHTML = `${formatAsCurrency(total)}`;
+          getSubTotal();
+      }
+      
+      function getSubTotal(){
+          let totalPrice = 0
+          let numOfItems = 0
+          cartItems.forEach(cartItem => {
+               const qty = cartItem.querySelector(".qty-input")
+               numOfItems += parseInt(qty.value)
+               const total = cartItem.querySelector(".total");
+               totalPrice += parseInt(total.getAttribute("data-total"));
+          });
+          subTotal.innerHTML = `${formatAsCurrency(totalPrice)}`;
+          numOfCartItems.forEach(numOfCartItem => {
+          numOfCartItem.innerHTML = `${numOfItems}`
+        })
+
         if(numOfItems === 0){
-            window.location.pathname = "/emptyCartPage.html"
+           cartPage.style.display = "none"
+           emptyCartPage.style.display = "block"
         }
-        else  if(numOfItems > 0){
-            window.location.pathname = "/cartPage.html"
-        }
-      })
+      }
+      
+      function updateItems(parentEl, qty){
+          qty = qty;
+          const price = parseInt(parentEl.querySelector(".price").getAttribute("data-price"));
+          getTotal(price, qty, parentEl);
+      }
+      
+      function formatAsCurrency(amount){
+          amount = parseFloat(amount);
+          const new_price = Intl.NumberFormat("en-NG", {
+          style: 'currency',
+          currency: 'USD',
+          }).format(amount);
+          return `${new_price.substring(2, new_price.length)}`;
+      }
 
       
 
-    //   const products = document.querySelectorAll(".item")
-    //   const subTotal = document.getElementById("subTotal")
-
-    //   window.onload = function() {
-    //     getTotal()
-    //   };
-
-    //   products.forEach(product => {
-    //     let price = product.querySelector(".price")
-    //     let itemQty = product.querySelector(".itemQty")
-    //     let total = product.querySelector(".total")
-    //     let addQty = product.querySelector(".addQty")
-    //     let subQty = product.querySelector(".subQty")
-        
-    //     addQty.addEventListener("click", () => {
-    //       itemQty.value++
-    //       total.value = price.value * itemQty.value
-    //       subQty.disabled = false
-    //       getTotal()
-    //     })
-
-    //     subQty.addEventListener("click", () => {
-    //       itemQty.value--
-    //       total.value = price.value * itemQty.value
-    //       getTotal()
-    //       if(itemQty.value == 1){
-    //         subQty.disabled = true
-    //       }
-    //   })
-    //   total.value = price.value * itemQty.value
-    // })
-      
-    // function getTotal(){
-    //   let totalPrice = 0
-    //   products.forEach(product => {
-    //     let total = product.querySelector(".total").value
-    //     totalPrice += Math.floor(total)
-    //   })
-    //  subTotal.value = `${totalPrice}`
-    // }
-
+   
 
     
      
